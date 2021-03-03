@@ -1,2 +1,2 @@
 # Blackjack
- Classic game blackjack
+ Classic blackjack game
