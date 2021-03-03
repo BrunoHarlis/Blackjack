@@ -1,12 +1,10 @@
 #include <algorithm>
 #include <array>
-#include <cassert>
-#include <ctime>
 #include <iostream>
-#include <random>
 #include "Card.h"
+#include "Deck.h"
 
-
+/*
 struct Player
 {
     int score{};
@@ -21,68 +19,6 @@ constexpr int maximumScore{ 21 };
 // Minium score that the dealer has to have.
 constexpr int minimumDealerScore{ 17 };
 
-
-
-int getCardValue(const Card& card)
-{
-    if (card.rank <= CardRank::RANK_10)
-    {
-        return (static_cast<int>(card.rank) + 2);
-    }
-
-    switch (card.rank)
-    {
-    case CardRank::RANK_JACK:
-    case CardRank::RANK_QUEEN:
-    case CardRank::RANK_KING:
-        return 10;
-    case CardRank::RANK_ACE:
-        return 11;
-    default:
-        assert(false && "should never happen");
-        return 0;
-    }
-}
-
-void printDeck(const deck_type& deck)
-{
-    for (const auto& card : deck)
-    {
-        printCard(card);
-        std::cout << ' ';
-    }
-
-    std::cout << '\n';
-}
-
-deck_type createDeck()
-{
-    deck_type deck{};
-
-    index_type card{ 0 };
-
-    auto suits{ static_cast<index_type>(CardSuit::MAX_SUITS) };
-    auto ranks{ static_cast<index_type>(CardRank::MAX_RANKS) };
-
-    for (index_type suit{ 0 }; suit < suits; ++suit)
-    {
-        for (index_type rank{ 0 }; rank < ranks; ++rank)
-        {
-            deck[card].suit = static_cast<CardSuit>(suit);
-            deck[card].rank = static_cast<CardRank>(rank);
-            ++card;
-        }
-    }
-
-    return deck;
-}
-
-void shuffleDeck(deck_type& deck)
-{
-    static std::mt19937 mt{ static_cast<std::mt19937::result_type>(std::time(nullptr)) };
-
-    std::shuffle(deck.begin(), deck.end(), mt);
-}
 
 bool playerWantsHit()
 {
@@ -163,9 +99,11 @@ bool playBlackjack(const deck_type& deck)
 
     return (player.score > dealer.score);
 }
+*/
 
 int main()
 {
+    /*
     auto deck{ createDeck() };
 
     shuffleDeck(deck);
@@ -178,6 +116,13 @@ int main()
     {
         std::cout << "You lose!\n";
     }
+    */
+    Deck deck{};
 
+    deck.shuffleDeck();
+    deck.printDeck();
+
+    std::cout << "The first card has value: " << deck.dealCard().getCardValue() << '\n';
+    std::cout << "The second card has value: " << deck.dealCard().getCardValue() << '\n';
     return 0;
 }
