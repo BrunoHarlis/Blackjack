@@ -1,0 +1,4 @@
+E:\MyProjects\Blackjack\BlackjackGame\Debug\BlackjackGame.exe
+E:\MyProjects\Blackjack\BlackjackGame\Debug\BlackjackGame.pdb
+E:\MyProjects\Blackjack\Blackjack\BlackjackGame\Debug\BlackjackGame.exe
+E:\MyProjects\Blackjack\Blackjack\BlackjackGame\Debug\BlackjackGame.pdb
