@@ -13,7 +13,8 @@ public:
 	int score()const;
 	bool isBust()const;
 	bool playerWantsHit()const;
-
+	bool playBlackjack(Deck& deck)const;
+	bool playerTurn(Deck& deck, Player& player);
 };
 
 #endif
