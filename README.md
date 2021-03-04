@@ -1,2 +1,4 @@
 # Blackjack
- Classic blackjack game
+ Classic blackjack game.
+ 
+ Still in production.
