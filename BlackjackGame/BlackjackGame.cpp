@@ -45,17 +45,17 @@ bool playBlackjack(Deck& deck)
        playerTurn(deck, player);
     }
     
-    //if player is not broken, dealer will play
-    if (player.score() <= 21)
+    //Dealer will not play if player overflows
+    if (player.score() > 21)
+    {
+        return false;
+    }
+    else
     {
         dealerTurn(deck, dealer);
     }
 
-    if (player.score() > dealer.score() && player.score() <= 21)
-    {
-        return true;
-    }
-    else if(dealer.score() > 21)
+    if (player.score() > dealer.score() || dealer.score() > 21)
     {
         return true;
     }
